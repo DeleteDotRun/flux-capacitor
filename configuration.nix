@@ -33,6 +33,14 @@
   # Firewall
   networking.firewall.enable = true;
   networking.firewall.allowPing = true;
+    networking.firewall.allowedTCPPorts = [
+    8444 8555 # Chia
+    445 139 # Samba
+    3389 # XRDP
+  ];
+  networking.firewall.allowedUDPPorts = [
+    137 138 # Samba
+  ];
   networking.useDHCP = false;
   #networking.interfaces.wlan0.useDHCP = true;
   #networking.interfaces.eth0.useDHCP = true;
