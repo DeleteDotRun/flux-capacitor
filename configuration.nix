@@ -25,8 +25,14 @@
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
   networking.useDHCP = false;
-  networking.interfaces.eth0.useDHCP = true;
-  networking.interfaces.wlan0.useDHCP = true;
+  #networking.interfaces.wlan0.useDHCP = true;
+  #networking.interfaces.eth0.useDHCP = true;
+  networking.interfaces.eth0.ipv4.addresses = [ {
+    address = "10.0.0.3";
+    prefixLength = 8;
+  } ];
+  networking.defaultGateway = "10.0.0.1";
+  networking.nameservers = [ "10.0.0.1" ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
