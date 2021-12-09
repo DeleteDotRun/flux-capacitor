@@ -20,6 +20,12 @@
   "dm-raid" # e.g. when you are configuring raid1 via: `lvconvert -m1 /dev/pool/home`
   ];
 
+  # Temp State
+  boot.devShmSize = "320G"; # Use /dev/shm for RamDrive as intended
+  zramSwap = { enable = false; }; #if you want to double time to plot enable this.
+  boot.kernel.sysctl = { "vm.swappiness" = 100; }; # if you want to add 10% to your plot time set this to 1.
+  boot.tmpOnTmpfs = true; # These are temp files an should never persist
+
   # networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
