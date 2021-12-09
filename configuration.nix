@@ -65,6 +65,19 @@
     # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+  };
+
+  environment.gnome.excludePackages = [
+    pkgs.gnome.cheese pkgs.gnome-photos pkgs.gnome.gnome-music
+    pkgs.gnome.gnome-terminal pkgs.gnome.gedit pkgs.epiphany pkgs.evince
+    pkgs.gnome.gnome-characters pkgs.gnome.totem pkgs.gnome.tali
+    pkgs.gnome.iagno pkgs.gnome.hitori pkgs.gnome.atomix pkgs.gnome-tour
+  ];
+
 
 
 
@@ -147,6 +160,12 @@
     # gcc
 
   ];
+
+  # nix-index command-not-found replacement
+  programs.command-not-found.enable = true;
+  programs.bash.interactiveShellInit = ''
+    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+  ''; #Replace bash with zsh if you use zsh
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
