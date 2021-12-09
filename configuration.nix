@@ -109,6 +109,45 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  # System Packages
+  environment.systemPackages = with pkgs; [
+    # Version control / archiving
+    git # gitAndTools.hub mercurial bazaar subversion unzip zip unrar p7zip dtrx
+
+    # Debugging / monitoring / analyzing
+    htop # ipmitool iotop powertop ltrace strace linuxPackages.perf pciutils lshw smartmontools usbutils
+    ncdu # ncdu -x / # crawl moded dirs
+    nix-tree # Interactively browse dependency graphs of Nix derivations.
+    
+
+    # Networking
+    # inetutils wireshark wget nix-prefetch-scripts
+
+    # Admin / Storage / Infrastructure Tools
+    # glusterfs
+    gptfdisk
+    xfsprogs
+    gparted
+    parted
+    tmux
+
+    # Linux shell utils
+    # pmutils psmisc which file binutils bc utillinuxCurses exfat dosfstools patchutils moreutils
+
+    # Command line programs
+    fish # k2pdfopt ncmpcpp mpc_cli beets wpa_supplicant mp3gain mpv haskellPackages.themplate abcde vorbisgain dfc ripgrep aspell weechat
+
+    # Man pages
+    nix-index man man-pages posix_man_pages stdman
+
+    # Development tools
+    # niv llvm haskellPackages.ghc
+    # cmake
+    # gnumake
+    # gcc
+
+  ];
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
