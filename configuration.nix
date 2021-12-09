@@ -78,6 +78,8 @@
     pkgs.gnome.iagno pkgs.gnome.hitori pkgs.gnome.atomix pkgs.gnome-tour
   ];
 
+  services.xrdp.enable = true;
+
 
 
 
