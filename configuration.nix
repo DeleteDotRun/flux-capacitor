@@ -21,10 +21,10 @@
   ];
 
   # Temp State
-  boot.devShmSize = "320G"; # Use /dev/shm for RamDrive as intended
-  zramSwap = { enable = false; }; #if you want to double time to plot enable this.
-  boot.kernel.sysctl = { "vm.swappiness" = 100; }; # if you want to add 10% to your plot time set this to 1.
-  boot.tmpOnTmpfs = true; # These are temp files an should never persist
+  #boot.devShmSize = "320G"; # Use /dev/shm for RamDrive as intended
+  #zramSwap = { enable = false; }; #if you want to double time to plot enable this.
+  #boot.kernel.sysctl = { "vm.swappiness" = 100; }; # if you want to add 10% to your plot time set this to 1.
+  #boot.tmpOnTmpfs = true; # These are temp files an should never persist
 
   # networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -68,28 +68,28 @@
   #   keyMap = "us";
   # };
 
-    # Enable the X11 windowing system.
+  # Enable the X11 windowing system.
   # services.xserver.enable = true;
-
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-  };
-  environment.gnome.excludePackages = [
-    pkgs.gnome.cheese pkgs.gnome-photos pkgs.gnome.gnome-music
-    pkgs.gnome.gnome-terminal pkgs.gnome.gedit pkgs.epiphany pkgs.evince
-    pkgs.gnome.gnome-characters pkgs.gnome.totem pkgs.gnome.tali
-    pkgs.gnome.iagno pkgs.gnome.hitori pkgs.gnome.atomix pkgs.gnome-tour
-  ];
-  services.xrdp.defaultWindowManager = "gnome-shell";
 
   #services.xserver = {
   #  enable = true;
-  #  displayManager.lightdm.enable = true;
-  #  desktopManager.xfce.enable = true;
+  #  displayManager.gdm.enable = true;
+  #  desktopManager.gnome.enable = true;
   #};
-  #services.xrdp.defaultWindowManager = "xfce4-session";
+  #environment.gnome.excludePackages = [
+  #  pkgs.gnome.cheese pkgs.gnome-photos pkgs.gnome.gnome-music
+  #  pkgs.gnome.gnome-terminal pkgs.gnome.gedit pkgs.epiphany pkgs.evince
+  #  pkgs.gnome.gnome-characters pkgs.gnome.totem pkgs.gnome.tali
+  #  pkgs.gnome.iagno pkgs.gnome.hitori pkgs.gnome.atomix pkgs.gnome-tour
+  #];
+  #services.xrdp.defaultWindowManager = "gnome-shell";
+
+  services.xserver = {
+    enable = true;
+    displayManager.lightdm.enable = true;
+    desktopManager.xfce.enable = true;
+  };
+  services.xrdp.defaultWindowManager = "xfce4-session";
 
   services.xrdp.enable = true;
   
