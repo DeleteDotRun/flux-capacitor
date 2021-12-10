@@ -209,7 +209,7 @@
 
   services.loki = {
     enable = true;
-    configFile = ./loki-local-config.yaml;
+    configFile = ./loki.yaml;
   };
 
   systemd.services.promtail = {
