@@ -39,14 +39,17 @@
   # Firewall
   networking.firewall.enable = true;
   networking.firewall.allowPing = true;
-    networking.firewall.allowedTCPPorts = [
+
+  networking.firewall.allowedTCPPorts = [
     # 8444 8555 # Chia
     445 139 # Samba
     3389 # XRDP
+    2342 # Grafana
   ];
   networking.firewall.allowedUDPPorts = [
     137 138 # Samba
   ];
+
   networking.useDHCP = false;
   #networking.interfaces.wlan0.useDHCP = true;
   #networking.interfaces.eth0.useDHCP = true;
@@ -171,6 +174,26 @@
       };
     };
   };
+
+
+  # grafana configuration
+  services.grafana = {
+    enable = true;
+    domain = "grafana.local";
+    port = 2342;
+    addr = "127.0.0.1";
+  };
+  
+  # nginx reverse proxy
+  services.nginx.virtualHosts.${config.services.grafana.domain} = {
+    locations."/" = {
+        proxyPass = "http://127.0.0.1:${toString config.services.grafana.port}";
+        proxyWebsockets = true;
+    };
+  };
+
+
+
 
   # System Packages
   environment.systemPackages = with pkgs; [
