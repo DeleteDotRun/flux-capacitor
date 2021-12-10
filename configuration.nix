@@ -145,30 +145,30 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  # Samba
-  services.samba = {
-   enable = true;
-   securityType = "user";
-    extraConfig = ''
-      workgroup = WORKGROUP
-      server string = flux-capacitor
-      server role = standalone server
-      netbios name = flux-capacitor
-      security = user
-      ;use sendfile = yes
-      ;max protocol = smb2
-      ;"hosts allow" = 192.168.0 localhost
-      ;"hosts deny" = 0.0.0.0/0
-      "guest account" = nobody
-      "map to guest" = bad user
-    '';
-    shares = {
-      distributed = {
-        path = "/srv/pool";
-        browseable = "yes";
-        public = "no";
-        writable = "yes";
-      };
+  # # Samba
+  # services.samba = {
+  #  enable = true;
+  #  securityType = "user";
+  #   extraConfig = ''
+  #     workgroup = WORKGROUP
+  #     server string = flux-capacitor
+  #     server role = standalone server
+  #     netbios name = flux-capacitor
+  #     security = user
+  #     ;use sendfile = yes
+  #     ;max protocol = smb2
+  #     ;"hosts allow" = 192.168.0 localhost
+  #     ;"hosts deny" = 0.0.0.0/0
+  #     "guest account" = nobody
+  #     "map to guest" = bad user
+  #   '';
+  #   shares = {
+  #     distributed = {
+  #       path = "/srv/pool";
+  #       browseable = "yes";
+  #       public = "no";
+  #       writable = "yes";
+  #     };
 
   # System Packages
   environment.systemPackages = with pkgs; [
