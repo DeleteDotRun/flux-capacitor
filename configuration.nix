@@ -232,6 +232,9 @@
     # gnumake
     # gcc
 
+    # GUI Apps
+    firefox
+
   ];
 
   # nix-index command-not-found replacement
