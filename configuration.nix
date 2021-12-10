@@ -163,7 +163,7 @@
       "map to guest" = bad user
     '';
     shares = {
-      distributed = {
+      pool = {
         path = "/srv/pool";
         browseable = "yes";
         public = "no";
