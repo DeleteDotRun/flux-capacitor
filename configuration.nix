@@ -40,7 +40,7 @@
   networking.firewall.enable = true;
   networking.firewall.allowPing = true;
     networking.firewall.allowedTCPPorts = [
-    8444 8555 # Chia
+    # 8444 8555 # Chia
     445 139 # Samba
     3389 # XRDP
   ];
@@ -138,6 +138,9 @@
   # };
 
   # List services that you want to enable:
+
+  # Virtualisation
+  virtualisation.docker.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
