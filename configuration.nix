@@ -45,6 +45,7 @@
     445 139 # Samba
     3389 # XRDP
     2342 # Grafana
+    9001 # Prometheus
   ];
   networking.firewall.allowedUDPPorts = [
     137 138 # Samba
@@ -183,7 +184,14 @@
     port = 2342;
     addr = "127.0.0.1";
   };
-  
+
+  # Prometheus
+  services.prometheus = {
+    enable = true;
+    port = 9001;
+  };
+
+
   # nginx reverse proxy
   services.nginx.virtualHosts.${config.services.grafana.domain} = {
     locations."/" = {
