@@ -45,8 +45,8 @@
     # 8444 8555 # Chia
     445 139 # Samba
     3389 # XRDP
-    # 2342 # Grafana
-    # 9001 9002 # Prometheus
+    2342 # Grafana
+    9001 9002 # Prometheus
     # 28183 3100 # Loki
   ];
   networking.firewall.allowedUDPPorts = [
