@@ -15,11 +15,11 @@
   # Enables the generation of /boot/extlinux/extlinux.conf
   boot.loader.generic-extlinux-compatible.enable = true;
 
-  boot.initrd.kernelModules = [
-  "dm-snapshot" # when you are using snapshots
-  "dm-raid" # e.g. when you are configuring raid1 via: `lvconvert -m1 /dev/pool/home`
-  "dm-crypt" # disk encryption
-  ];
+  #boot.initrd.kernelModules = [
+  #"dm-snapshot" # when you are using snapshots
+  #"dm-raid" # e.g. when you are configuring raid1 via: `lvconvert -m1 /dev/pool/home`
+  #"dm-crypt" # disk encryption
+  #];
 
   # Temp State
   #boot.devShmSize = "320G"; # Use /dev/shm for RamDrive as intended
