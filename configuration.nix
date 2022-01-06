@@ -146,7 +146,7 @@
   #   firefox
   # ];
 
-    # Some programs need SUID wrappers, can be configured further or are
+  # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {
@@ -190,13 +190,13 @@
   };
 
 
-  # # grafana configuration
-  # services.grafana = {
-  #   enable = true;
-  #   domain = "grafana.local";
-  #   port = 2342;
-  #   addr = "127.0.0.1";
-  # };
+  # grafana configuration
+  services.grafana = {
+    enable = true;
+    domain = "grafana.local";
+    port = 2342;
+    addr = "127.0.0.1";
+  };
 
   # # Prometheus
   # services.prometheus = {
