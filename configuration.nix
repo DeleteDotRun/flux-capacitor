@@ -27,10 +27,10 @@
    options = [ "direct_io" "defaults" "allow_other" "fsname=merged" ];
   };
 
-  #fileSystems."/srv/pool/nft-plots" = {
-  #  device = "/srv/pool/drives/merged/nft-plots/";
-  #  options = [ "bind" ];
-  #};
+  fileSystems."/srv/pool/nft-plots" = {
+   device = "/srv/pool/drives/merged/nft-plots/";
+   options = [ "bind" ];
+  };
 
   # Temp State
   #boot.devShmSize = "320G"; # Use /dev/shm for RamDrive as intended
