@@ -21,6 +21,17 @@
   #"dm-crypt" # disk encryption
   #];
 
+  fileSystems."/srv/pool/drives/merged" = {
+    device = "/srv/pool/drives/hdd-*";
+    fsType = "fuse.mergerfs" ;
+    options = [ "direct_io" "defaults" "allow_other" "fsname=merged" ];
+  };
+
+  fileSystems."/srv/pool/nft-plots" = {
+    device = "/srv/pool/drives/merged/nft-plots/";
+    options = [ "bind" ];
+  };
+
   # Temp State
   #boot.devShmSize = "320G"; # Use /dev/shm for RamDrive as intended
   #zramSwap = { enable = false; }; #if you want to double time to plot enable this.
