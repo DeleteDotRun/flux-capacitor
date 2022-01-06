@@ -21,16 +21,16 @@
   #"dm-crypt" # disk encryption
   #];
 
-  fileSystems."/srv/pool/drives/merged" = {
-    device = "/srv/pool/drives/hdd-*";
-    fsType = "fuse.mergerfs" ;
-    options = [ "direct_io" "defaults" "allow_other" "fsname=merged" ];
-  };
+  #fileSystems."/srv/pool/drives/merged" = {
+  #  device = "/srv/pool/drives/hdd-*";
+  #  fsType = "fuse.mergerfs" ;
+  #  options = [ "direct_io" "defaults" "allow_other" "fsname=merged" ];
+  #};
 
-  fileSystems."/srv/pool/nft-plots" = {
-    device = "/srv/pool/drives/merged/nft-plots/";
-    options = [ "bind" ];
-  };
+  #fileSystems."/srv/pool/nft-plots" = {
+  #  device = "/srv/pool/drives/merged/nft-plots/";
+  #  options = [ "bind" ];
+  #};
 
   # Temp State
   #boot.devShmSize = "320G"; # Use /dev/shm for RamDrive as intended
@@ -162,62 +162,62 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  # Samba
-  services.samba = {
-   enable = true;
-   securityType = "user";
-    extraConfig = ''
-      workgroup = WORKGROUP
-      server string = flux-capacitor
-      server role = standalone server
-      netbios name = flux-capacitor
-      security = user
-      ;use sendfile = yes
-      ;max protocol = smb2
-      ;"hosts allow" = 192.168.0 localhost
-      ;"hosts deny" = 0.0.0.0/0
-      "guest account" = nobody
-      "map to guest" = bad user
-    '';
-    shares = {
-      pool = {
-        path = "/srv/pool";
-        browseable = "yes";
-        public = "no";
-        writable = "yes";
-      };
-    };
-  };
+  # # Samba
+  # services.samba = {
+  #  enable = true;
+  #  securityType = "user";
+  #   extraConfig = ''
+  #     workgroup = WORKGROUP
+  #     server string = flux-capacitor
+  #     server role = standalone server
+  #     netbios name = flux-capacitor
+  #     security = user
+  #     ;use sendfile = yes
+  #     ;max protocol = smb2
+  #     ;"hosts allow" = 192.168.0 localhost
+  #     ;"hosts deny" = 0.0.0.0/0
+  #     "guest account" = nobody
+  #     "map to guest" = bad user
+  #   '';
+  #   shares = {
+  #     pool = {
+  #       path = "/srv/pool";
+  #       browseable = "yes";
+  #       public = "no";
+  #       writable = "yes";
+  #     };
+  #   };
+  # };
 
 
-  # grafana configuration
-  services.grafana = {
-    enable = true;
-    domain = "grafana.local";
-    port = 2342;
-    addr = "127.0.0.1";
-  };
+  # # grafana configuration
+  # services.grafana = {
+  #   enable = true;
+  #   domain = "grafana.local";
+  #   port = 2342;
+  #   addr = "127.0.0.1";
+  # };
 
-  # Prometheus
-  services.prometheus = {
-    enable = true;
-    port = 9001;
-    exporters = {
-      node = {
-        enable = true;
-        enabledCollectors = [ "systemd" ];
-        port = 9002;
-      };
-    };
-    scrapeConfigs = [
-      {
-        job_name = "flux-capacitor";
-        static_configs = [{
-          targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ];
-        }];
-      }
-    ];
-  };
+  # # Prometheus
+  # services.prometheus = {
+  #   enable = true;
+  #   port = 9001;
+  #   exporters = {
+  #     node = {
+  #       enable = true;
+  #       enabledCollectors = [ "systemd" ];
+  #       port = 9002;
+  #     };
+  #   };
+  #   scrapeConfigs = [
+  #     {
+  #       job_name = "flux-capacitor";
+  #       static_configs = [{
+  #         targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ];
+  #       }];
+  #     }
+  #   ];
+  # };
 
   # services.loki = {
   #   enable = true;
@@ -264,6 +264,7 @@
 
     # Admin / Storage / Infrastructure Tools
     # glusterfs
+    mergerfs
     gptfdisk
     xfsprogs
     gparted
