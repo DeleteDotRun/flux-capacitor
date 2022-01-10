@@ -56,8 +56,8 @@
     # 8444 8555 # Chia
     445 139 # Samba
     3389 # XRDP
-    2342 # Grafana
-    9001 9002 # Prometheus
+    # 2342 # Grafana
+    # 9001 9002 # Prometheus
     # 28183 3100 # Loki
   ];
   networking.firewall.allowedUDPPorts = [
@@ -111,12 +111,6 @@
   services.xrdp.defaultWindowManager = "xfce4-session";
 
   services.xrdp.enable = true;
-  
-
-
-
-
-
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
@@ -156,8 +150,8 @@
 
   # List services that you want to enable:
 
-  # Virtualisation
-  virtualisation.docker.enable = true;
+  # # Virtualisation
+  # virtualisation.docker.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -190,34 +184,34 @@
   };
 
 
-  # grafana configuration
-  services.grafana = {
-    enable = true;
-    domain = "grafana.local";
-    port = 2342;
-    addr = "127.0.0.1";
-  };
+  # # grafana configuration
+  # services.grafana = {
+  #   enable = true;
+  #   domain = "grafana.local";
+  #   port = 2342;
+  #   addr = "127.0.0.1";
+  # };
 
-  # Prometheus
-  services.prometheus = {
-    enable = true;
-    port = 9001;
-    exporters = {
-      node = {
-        enable = true;
-        enabledCollectors = [ "systemd" ];
-        port = 9002;
-      };
-    };
-    scrapeConfigs = [
-      {
-        job_name = "flux-capacitor";
-        static_configs = [{
-          targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ];
-        }];
-      }
-    ];
-  };
+  # # Prometheus
+  # services.prometheus = {
+  #   enable = true;
+  #   port = 9001;
+  #   exporters = {
+  #     node = {
+  #       enable = true;
+  #       enabledCollectors = [ "systemd" ];
+  #       port = 9002;
+  #     };
+  #   };
+  #   scrapeConfigs = [
+  #     {
+  #       job_name = "flux-capacitor";
+  #       static_configs = [{
+  #         targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ];
+  #       }];
+  #     }
+  #   ];
+  # };
 
   # services.loki = {
   #   enable = true;
