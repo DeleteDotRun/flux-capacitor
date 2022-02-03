@@ -298,7 +298,6 @@
     # cmake
     # gnumake
     # gcc
-    jdk11
 
     # GUI Apps
     firefox
