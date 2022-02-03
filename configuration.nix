@@ -301,6 +301,7 @@
 
     # GUI Apps
     firefox
+    vlc
 
   ];
 
