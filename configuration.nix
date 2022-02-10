@@ -46,6 +46,10 @@
    options = [ "bind" ];
   };
 
+  # Virtualization
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "vault" ];
+  
   # Temp State
   #boot.devShmSize = "320G"; # Use /dev/shm for RamDrive as intended
   #zramSwap = { enable = false; }; #if you want to double time to plot enable this.
