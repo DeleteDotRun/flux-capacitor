@@ -47,8 +47,9 @@
   };
 
   # Virtualization
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "vault" ];
+  ### Not Working on arm
+  # virtualisation.virtualbox.host.enable = true;
+  # users.extraGroups.vboxusers.members = [ "vault" ];
   
   # Temp State
   #boot.devShmSize = "320G"; # Use /dev/shm for RamDrive as intended
