@@ -159,7 +159,7 @@
   };
   users.users.vault = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "vault" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "vault" "libvirtd" ]; # Enable ‘sudo’ for the user.
   };
 
   # List packages installed in system profile. To search, run:
