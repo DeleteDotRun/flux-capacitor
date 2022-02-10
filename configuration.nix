@@ -50,6 +50,9 @@
   ### Not Working on arm
   # virtualisation.virtualbox.host.enable = true;
   # users.extraGroups.vboxusers.members = [ "vault" ];
+  # nixpkgs.config.allowUnfree = true;
+  # virtualisation.virtualbox.host.enable = true;
+  # virtualisation.virtualbox.host.enableExtensionPack = true;
   
   # Temp State
   #boot.devShmSize = "320G"; # Use /dev/shm for RamDrive as intended
