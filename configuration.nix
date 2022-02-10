@@ -47,7 +47,8 @@
   };
 
   # Virtualization
-  ### Not Working on arm
+
+  ### Virtualbox not Working on arm ###
   # virtualisation.virtualbox.host.enable = true;
   # users.extraGroups.vboxusers.members = [ "vault" ];
   # nixpkgs.config.allowUnfree = true;
