@@ -49,7 +49,7 @@
   # Virtualization
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
-  environment.systemPackages = with pkgs; [ virt-manager ]
+  # see bellow # environment.systemPackages = with pkgs; [ virt-manager ]
 
   ### Virtualbox not Working on arm ###
   # virtualisation.virtualbox.host.enable = true;
@@ -282,6 +282,8 @@
     ncdu # ncdu -x / # crawl moded dirs
     nix-tree # Interactively browse dependency graphs of Nix derivations.
     
+    # Virtualization
+    virt-manager
 
     # Networking
     # inetutils wireshark wget nix-prefetch-scripts
