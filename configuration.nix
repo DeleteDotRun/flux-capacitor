@@ -94,11 +94,11 @@
   #networking.interfaces.wlan0.useDHCP = true;
   #networking.interfaces.eth0.useDHCP = true;
   networking.interfaces.eth0.ipv4.addresses = [ {
-    address = "10.0.0.3";
+    address = "192.168.0.5";
     prefixLength = 8;
   } ];
-  networking.defaultGateway = "10.0.0.1";
-  networking.nameservers = [ "10.0.0.1" ];
+  networking.defaultGateway = "192.168.0.1";
+  networking.nameservers = [ "192.168.0.1" ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
