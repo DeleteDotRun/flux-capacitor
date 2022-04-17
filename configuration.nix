@@ -47,8 +47,8 @@
   };
 
   # Virtualization
-  virtualisation.libvirtd.enable = true;
-  programs.dconf.enable = true;
+  # virtualisation.libvirtd.enable = true;
+  # programs.dconf.enable = true;
   # see bellow # environment.systemPackages = with pkgs; [ virt-manager ]
 
   ### Virtualbox not Working on arm ###
