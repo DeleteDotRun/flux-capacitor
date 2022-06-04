@@ -114,29 +114,29 @@
   };
 
   # Enable the X11 windowing system.
-  # services.xserver.enable = true;
+  services.xserver = {
+   enable = true;
+   displayManager.gdm.enable = true;
+   desktopManager.gnome.enable = true;
+  };
+  services.xrdp.defaultWindowManager = "gnome-shell";
+  services.xrdp.enable = true;
 
-  #services.xserver = {
-  #  enable = true;
-  #  displayManager.gdm.enable = true;
-  #  desktopManager.gnome.enable = true;
-  #};
+
   #environment.gnome.excludePackages = [
   #  pkgs.gnome.cheese pkgs.gnome-photos pkgs.gnome.gnome-music
   #  pkgs.gnome.gnome-terminal pkgs.gnome.gedit pkgs.epiphany pkgs.evince
   #  pkgs.gnome.gnome-characters pkgs.gnome.totem pkgs.gnome.tali
   #  pkgs.gnome.iagno pkgs.gnome.hitori pkgs.gnome.atomix pkgs.gnome-tour
   #];
-  #services.xrdp.defaultWindowManager = "gnome-shell";
 
-  services.xserver = {
-    enable = true;
-    displayManager.lightdm.enable = true;
-    desktopManager.xfce.enable = true;
-  };
-  services.xrdp.defaultWindowManager = "xfce4-session";
-
-  services.xrdp.enable = true;
+  # services.xserver = {
+  #   enable = true;
+  #   displayManager.lightdm.enable = true;
+  #   desktopManager.xfce.enable = true;
+  # };
+  # services.xrdp.defaultWindowManager = "xfce4-session";
+  # services.xrdp.enable = true;
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
@@ -279,11 +279,11 @@
 
     # Debugging / monitoring / analyzing
     htop # ipmitool iotop powertop ltrace strace linuxPackages.perf pciutils lshw smartmontools usbutils
-    ncdu # ncdu -x / # crawl moded dirs
-    nix-tree # Interactively browse dependency graphs of Nix derivations.
+    # ncdu # ncdu -x / # crawl moded dirs
+    # nix-tree # Interactively browse dependency graphs of Nix derivations.
     
     # Virtualization
-    virt-manager
+    # virt-manager
 
     # Networking
     # inetutils wireshark wget nix-prefetch-scripts
@@ -295,17 +295,17 @@
     xfsprogs
     gparted
     parted
-    tmux
+    # tmux
     cryptsetup
 
     # Linux shell utils
     # pmutils psmisc which file binutils bc utillinuxCurses exfat dosfstools patchutils moreutils
 
     # Command line programs
-    fish # k2pdfopt ncmpcpp mpc_cli beets wpa_supplicant mp3gain mpv haskellPackages.themplate abcde vorbisgain dfc ripgrep aspell weechat
+    # fish # k2pdfopt ncmpcpp mpc_cli beets wpa_supplicant mp3gain mpv haskellPackages.themplate abcde vorbisgain dfc ripgrep aspell weechat
 
     # Man pages
-    nix-index man man-pages posix_man_pages stdman
+    # nix-index man man-pages posix_man_pages stdman
 
     # Development tools
     # niv llvm haskellPackages.ghc
@@ -314,7 +314,7 @@
     # gcc
 
     # GUI Apps
-    firefox
+    # firefox
     vlc
 
   ];
