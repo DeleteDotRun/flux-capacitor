@@ -23,28 +23,28 @@
 
   # Mounts
 
-  fileSystems."/srv/pool/drives/merged" = {
-   device = "/srv/pool/drives/hdd-*";
-   fsType = "fuse.mergerfs" ;
-   options = [ "direct_io" "defaults" "allow_other" "fsname=merged" ];
-  };
+  # fileSystems."/srv/pool/drives/merged" = {
+  #  device = "/srv/pool/drives/hdd-*";
+  #  fsType = "fuse.mergerfs" ;
+  #  options = [ "direct_io" "defaults" "allow_other" "fsname=merged" ];
+  # };
 
   # Binds
 
-  fileSystems."/srv/pool/nft-plots" = {
-   device = "/srv/pool/drives/merged/nft-plots/";
-   options = [ "bind" ];
-  };
+  # fileSystems."/srv/pool/nft-plots" = {
+  #  device = "/srv/pool/drives/merged/nft-plots/";
+  #  options = [ "bind" ];
+  # };
 
-  fileSystems."/srv/pool/mirror" = {
-   device = "/srv/pool/drives/mirror";
-   options = [ "bind" ];
-  };
+  # fileSystems."/srv/pool/mirror" = {
+  #  device = "/srv/pool/drives/mirror";
+  #  options = [ "bind" ];
+  # };
 
-  fileSystems."/srv/pool/vault" = {
-   device = "/srv/pool/drives/vault";
-   options = [ "bind" ];
-  };
+  # fileSystems."/srv/pool/vault" = {
+  #  device = "/srv/pool/drives/vault";
+  #  options = [ "bind" ];
+  # };
 
   # Virtualization
   # virtualisation.libvirtd.enable = true;
@@ -155,11 +155,11 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.me = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "me" ]; # Enable ‘sudo’ for the user.
   };
   users.users.vault = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "vault" "libvirtd" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "vault" ]; # Enable ‘sudo’ for the user.
   };
 
   # List packages installed in system profile. To search, run:
@@ -291,12 +291,12 @@
     # Admin / Storage / Infrastructure Tools
     # glusterfs
     mergerfs
-    gptfdisk
-    xfsprogs
-    gparted
-    parted
+    # gptfdisk
+    # xfsprogs
+    # gparted
+    # parted
     # tmux
-    cryptsetup
+    # cryptsetup
 
     # Linux shell utils
     # pmutils psmisc which file binutils bc utillinuxCurses exfat dosfstools patchutils moreutils
@@ -315,7 +315,7 @@
 
     # GUI Apps
     # firefox
-    vlc
+    # vlc
 
   ];
 
@@ -337,6 +337,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.05"; # Did you read the comment?
+  system.stateVersion = "21.11"; # Did you read the comment?
 
 }
