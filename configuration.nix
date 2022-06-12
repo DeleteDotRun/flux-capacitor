@@ -113,14 +113,14 @@
     keyMap = "us";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver = {
-   enable = true;
-   displayManager.gdm.enable = true;
-   desktopManager.gnome.enable = true;
-  };
-  services.xrdp.defaultWindowManager = "gnome-shell";
-  services.xrdp.enable = true;
+  # # Enable the X11 windowing system.
+  # services.xserver = {
+  #  enable = true;
+  #  displayManager.gdm.enable = true;
+  #  desktopManager.gnome.enable = true;
+  # };
+  # services.xrdp.defaultWindowManager = "gnome-shell";
+  # services.xrdp.enable = true;
 
 
   #environment.gnome.excludePackages = [
@@ -157,10 +157,10 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "me" ]; # Enable ‘sudo’ for the user.
   };
-  users.users.vault = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "vault" ]; # Enable ‘sudo’ for the user.
-  };
+  # users.users.vault = {
+  #   isNormalUser = true;
+  #   extraGroups = [ "wheel" "vault" ]; # Enable ‘sudo’ for the user.
+  # };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -183,35 +183,35 @@
   # # Virtualisation
   # virtualisation.docker.enable = true;
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  # # Enable the OpenSSH daemon.
+  # services.openssh.enable = true;
 
-  # Samba
-  services.samba = {
-   enable = true;
-   securityType = "user";
-    extraConfig = ''
-      workgroup = WORKGROUP
-      server string = flux-capacitor
-      server role = standalone server
-      netbios name = flux-capacitor
-      security = user
-      ;use sendfile = yes
-      ;max protocol = smb2
-      ;"hosts allow" = 192.168.0 localhost
-      ;"hosts deny" = 0.0.0.0/0
-      "guest account" = nobody
-      "map to guest" = bad user
-    '';
-    shares = {
-      pool = {
-        path = "/srv/pool";
-        browseable = "yes";
-        public = "no";
-        writable = "yes";
-      };
-    };
-  };
+  # # Samba
+  # services.samba = {
+  #  enable = true;
+  #  securityType = "user";
+  #   extraConfig = ''
+  #     workgroup = WORKGROUP
+  #     server string = flux-capacitor
+  #     server role = standalone server
+  #     netbios name = flux-capacitor
+  #     security = user
+  #     ;use sendfile = yes
+  #     ;max protocol = smb2
+  #     ;"hosts allow" = 192.168.0 localhost
+  #     ;"hosts deny" = 0.0.0.0/0
+  #     "guest account" = nobody
+  #     "map to guest" = bad user
+  #   '';
+  #   shares = {
+  #     pool = {
+  #       path = "/srv/pool";
+  #       browseable = "yes";
+  #       public = "no";
+  #       writable = "yes";
+  #     };
+  #   };
+  # };
 
 
   # # grafana configuration
@@ -319,11 +319,11 @@
 
   ];
 
-  # nix-index command-not-found replacement
-  programs.command-not-found.enable = true;
-  programs.bash.interactiveShellInit = ''
-    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
-  ''; #Replace bash with zsh if you use zsh
+  # # nix-index command-not-found replacement
+  # programs.command-not-found.enable = true;
+  # programs.bash.interactiveShellInit = ''
+  #   source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+  # ''; #Replace bash with zsh if you use zsh
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
