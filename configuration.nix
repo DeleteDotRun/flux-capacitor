@@ -296,7 +296,7 @@
     # gparted
     # parted
     # tmux
-    # cryptsetup
+    cryptsetup
 
     # Linux shell utils
     # pmutils psmisc which file binutils bc utillinuxCurses exfat dosfstools patchutils moreutils
