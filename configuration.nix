@@ -36,15 +36,15 @@
    options = [ "bind" ];
   };
 
-  # fileSystems."/srv/pool/mirror" = {
-  #  device = "/srv/pool/drives/mirror";
-  #  options = [ "bind" ];
-  # };
+  fileSystems."/srv/pool/mirror" = {
+   device = "/srv/pool/drives/mirror";
+   options = [ "bind" ];
+  };
 
-  # fileSystems."/srv/pool/vault" = {
-  #  device = "/srv/pool/drives/vault";
-  #  options = [ "bind" ];
-  # };
+  fileSystems."/srv/pool/vault" = {
+   device = "/srv/pool/drives/vault";
+   options = [ "bind" ];
+  };
 
   # Virtualization
   # virtualisation.libvirtd.enable = true;
