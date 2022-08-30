@@ -41,10 +41,10 @@
    options = [ "bind" ];
   };
 
-  # fileSystems."/srv/pool/vault" = {
-  #  device = "/srv/pool/drives/vault";
-  #  options = [ "bind" ];
-  # };
+  fileSystems."/srv/pool/vault" = {
+   device = "/srv/pool/drives/vault";
+   options = [ "bind" ];
+  };
 
   # Virtualization
   # virtualisation.libvirtd.enable = true;
