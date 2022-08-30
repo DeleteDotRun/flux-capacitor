@@ -322,8 +322,8 @@
     # gcc
 
     # GUI Apps
-    # firefox
-    # vlc
+    firefox
+    vlc
 
   ];
 
