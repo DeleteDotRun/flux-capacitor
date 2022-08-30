@@ -324,8 +324,8 @@
     # GUI Apps
     firefox
     vlc
-    xfce.thunar
-
+    # xfce.thunar
+    gnome.nautilus
   ];
 
   # # nix-index command-not-found replacement
