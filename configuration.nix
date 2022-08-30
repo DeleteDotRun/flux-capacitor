@@ -324,13 +324,8 @@
     # GUI Apps
     firefox
     vlc
+    krusader
 
-    # Gnome Apps
-    # gnome.cheese
-    gnome-photos
-    # gnome.gnome-music
-    gnome.gnome-terminal
-    # gnome.gedit
   ];
 
   # # nix-index command-not-found replacement
