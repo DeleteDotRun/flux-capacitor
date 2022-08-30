@@ -23,23 +23,23 @@
 
   # Mounts
 
-  fileSystems."/srv/pool/drives/merged" = {
-   device = "/srv/pool/drives/hdd-*";
-   fsType = "fuse.mergerfs" ;
-   options = [ "direct_io" "defaults" "allow_other" "fsname=merged" ];
-  };
+  # fileSystems."/srv/pool/drives/merged" = {
+  #  device = "/srv/pool/drives/hdd-*";
+  #  fsType = "fuse.mergerfs" ;
+  #  options = [ "direct_io" "defaults" "allow_other" "fsname=merged" ];
+  # };
 
   # Binds
 
-  fileSystems."/srv/pool/nft-plots" = {
-   device = "/srv/pool/drives/merged/nft-plots/";
-   options = [ "bind" ];
-  };
+  # fileSystems."/srv/pool/nft-plots" = {
+  #  device = "/srv/pool/drives/merged/nft-plots/";
+  #  options = [ "bind" ];
+  # };
 
-  fileSystems."/srv/pool/mirror" = {
-   device = "/srv/pool/drives/mirror";
-   options = [ "bind" ];
-  };
+  # fileSystems."/srv/pool/mirror" = {
+  #  device = "/srv/pool/drives/mirror";
+  #  options = [ "bind" ];
+  # };
 
   # fileSystems."/srv/pool/vault" = {
   #  device = "/srv/pool/drives/vault";
