@@ -322,10 +322,7 @@
     # gcc
 
     # GUI Apps
-    firefox
     vlc
-    # xfce.thunar
-    gnome.nautilus
   ];
 
   # # nix-index command-not-found replacement
