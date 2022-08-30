@@ -23,11 +23,11 @@
 
   # Mounts
 
-  # fileSystems."/srv/pool/drives/merged" = {
-  #  device = "/srv/pool/drives/hdd-*";
-  #  fsType = "fuse.mergerfs" ;
-  #  options = [ "direct_io" "defaults" "allow_other" "fsname=merged" ];
-  # };
+  fileSystems."/srv/pool/drives/merged" = {
+   device = "/srv/pool/drives/hdd-*";
+   fsType = "fuse.mergerfs" ;
+   options = [ "direct_io" "defaults" "allow_other" "fsname=merged" ];
+  };
 
   # Binds
 
