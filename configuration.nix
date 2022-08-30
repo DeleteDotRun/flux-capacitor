@@ -206,10 +206,17 @@
     shares = {
       pool = {
         path = "/srv/pool";
+        valid users = "me";
         browseable = "yes";
         public = "no";
         writable = "yes";
       };
+      vault = {
+        path = "/srv/vault";
+        valid users = "vault";
+        browseable = "yes";
+        public = "no";
+        writable = "yes";
     };
   };
 
