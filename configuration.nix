@@ -31,10 +31,10 @@
 
   # Binds
 
-  # fileSystems."/srv/pool/nft-plots" = {
-  #  device = "/srv/pool/drives/merged/nft-plots/";
-  #  options = [ "bind" ];
-  # };
+  fileSystems."/srv/pool/nft-plots" = {
+   device = "/srv/pool/drives/merged/nft-plots/";
+   options = [ "bind" ];
+  };
 
   # fileSystems."/srv/pool/mirror" = {
   #  device = "/srv/pool/drives/mirror";
