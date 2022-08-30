@@ -217,6 +217,7 @@
         browseable = "yes";
         public = "no";
         writable = "yes";
+      };
     };
   };
 
