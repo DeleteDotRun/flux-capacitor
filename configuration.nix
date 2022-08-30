@@ -23,23 +23,23 @@
 
   # Mounts
 
-  fileSystems."/srv/pool/drives/merged" = {
-   device = "/srv/pool/drives/hdd-*";
-   fsType = "fuse.mergerfs" ;
-   options = [ "direct_io" "defaults" "allow_other" "fsname=merged" ];
-  };
+  # fileSystems."/srv/pool/drives/merged" = {
+  #  device = "/srv/pool/drives/hdd-*";
+  #  fsType = "fuse.mergerfs" ;
+  #  options = [ "direct_io" "defaults" "allow_other" "fsname=merged" ];
+  # };
 
   # Binds
 
-  fileSystems."/srv/pool/nft-plots" = {
-   device = "/srv/pool/drives/merged/nft-plots/";
-   options = [ "bind" ];
-  };
+  # fileSystems."/srv/pool/nft-plots" = {
+  #  device = "/srv/pool/drives/merged/nft-plots/";
+  #  options = [ "bind" ];
+  # };
 
-  fileSystems."/srv/pool/mirror" = {
-   device = "/srv/pool/drives/mirror";
-   options = [ "bind" ];
-  };
+  # fileSystems."/srv/pool/mirror" = {
+  #  device = "/srv/pool/drives/mirror";
+  #  options = [ "bind" ];
+  # };
 
   # fileSystems."/srv/pool/vault" = {
   #  device = "/srv/pool/drives/vault";
@@ -187,31 +187,31 @@
   services.openssh.enable = true;
 
   # # Samba ## sudo smbpasswd -a me
-  services.samba = {
-   enable = true;
-   securityType = "user";
-    extraConfig = ''
-      workgroup = WORKGROUP
-      server string = flux-capacitor
-      server role = standalone server
-      netbios name = flux-capacitor
-      security = user
-      ;use sendfile = yes
-      ;max protocol = smb2
-      ;"hosts allow" = 192.168.0 localhost
-      ;"hosts deny" = 0.0.0.0/0
-      "guest account" = nobody
-      "map to guest" = bad user
-    '';
-    shares = {
-      pool = {
-        path = "/srv/pool";
-        browseable = "yes";
-        public = "no";
-        writable = "yes";
-      };
-    };
-  };
+  # services.samba = {
+  #  enable = true;
+  #  securityType = "user";
+  #   extraConfig = ''
+  #     workgroup = WORKGROUP
+  #     server string = flux-capacitor
+  #     server role = standalone server
+  #     netbios name = flux-capacitor
+  #     security = user
+  #     ;use sendfile = yes
+  #     ;max protocol = smb2
+  #     ;"hosts allow" = 192.168.0 localhost
+  #     ;"hosts deny" = 0.0.0.0/0
+  #     "guest account" = nobody
+  #     "map to guest" = bad user
+  #   '';
+  #   shares = {
+  #     pool = {
+  #       path = "/srv/pool";
+  #       browseable = "yes";
+  #       public = "no";
+  #       writable = "yes";
+  #     };
+  #   };
+  # };
 
 
   # # grafana configuration
