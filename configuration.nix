@@ -157,10 +157,10 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "me" ]; # Enable ‘sudo’ for the user.
   };
-  # users.users.vault = {
-  #   isNormalUser = true;
-  #   extraGroups = [ "wheel" "vault" ]; # Enable ‘sudo’ for the user.
-  # };
+  users.users.vault = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "vault" ]; # Enable ‘sudo’ for the user.
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
