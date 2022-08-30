@@ -324,7 +324,7 @@
     # GUI Apps
     firefox
     vlc
-    krusader
+    xfce.thunar
 
   ];
 
