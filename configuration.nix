@@ -31,20 +31,20 @@
 
   # Binds
 
-  fileSystems."/srv/pool/nft-plots" = {
-   device = "/srv/pool/drives/merged/nft-plots/";
-   options = [ "bind" ];
-  };
+  # fileSystems."/srv/pool/nft-plots" = {
+  #  device = "/srv/pool/drives/merged/nft-plots/";
+  #  options = [ "bind" ];
+  # };
 
-  fileSystems."/srv/pool/mirror" = {
-   device = "/srv/pool/drives/mirror";
-   options = [ "bind" ];
-  };
+  # fileSystems."/srv/pool/mirror" = {
+  #  device = "/srv/pool/drives/mirror";
+  #  options = [ "bind" ];
+  # };
 
-  fileSystems."/srv/pool/vault" = {
-   device = "/srv/pool/drives/vault";
-   options = [ "bind" ];
-  };
+  # fileSystems."/srv/pool/vault" = {
+  #  device = "/srv/pool/drives/vault";
+  #  options = [ "bind" ];
+  # };
 
   # Virtualization
   # virtualisation.libvirtd.enable = true;
@@ -114,13 +114,13 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver = {
-   enable = true;
-   displayManager.gdm.enable = true;
-   desktopManager.gnome.enable = true;
-  };
-  services.xrdp.defaultWindowManager = "gnome-shell";
-  services.xrdp.enable = true;
+  # services.xserver = {
+  #  enable = true;
+  #  displayManager.gdm.enable = true;
+  #  desktopManager.gnome.enable = true;
+  # };
+  # services.xrdp.defaultWindowManager = "gnome-shell";
+  # services.xrdp.enable = true;
 
 
   # environment.gnome.excludePackages = [
@@ -211,13 +211,13 @@
         public = "no";
         writable = "yes";
       };
-      vault = {
-        path = "/srv/vault";
-        "valid users" = "vault";
-        browseable = "yes";
-        public = "no";
-        writable = "yes";
-      };
+      # vault = {
+      #   path = "/srv/vault";
+      #   "valid users" = "vault";
+      #   browseable = "yes";
+      #   public = "no";
+      #   writable = "yes";
+      # };
     };
   };
 
